@@ -1,0 +1,6 @@
+[submodule "libs/openvr"]
+	path = libs/openvr
+	url = git@github.com:ValveSoftware/openvr.git
+[submodule "libs/glfw"]
+	path = libs/glfw
+	url = git@github.com:glfw/glfw.git
