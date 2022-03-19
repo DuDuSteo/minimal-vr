@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(GLFW_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libs/glfw)
 set(OPENVR_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libs/openvr)
+set(GLM_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libs/glm)
 
 ## OpenVR
 set(OPENVR_LIB_DIR ${OPENVR_DIR}/lib ${OPENVR_DIR}/bin)
@@ -33,6 +34,11 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL " FORCE")
 
 add_subdirectory(${GLFW_DIR})
 
+## glm
+
+add_subdirectory(${GLM_DIR})
+
+
 ## Finish setup
 
 set(SOURCE ${SOURCE_DIR}/main.cpp)
@@ -42,4 +48,4 @@ project(${PROJECT_NAME})
 add_executable(${PROJECT_NAME} ${SOURCE})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${OPENVR_INCLUDE_DIR})
-target_link_libraries(${PROJECT_NAME} PUBLIC glfw ${OPENVR_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} PUBLIC glm glfw ${OPENVR_LIBRARIES})
